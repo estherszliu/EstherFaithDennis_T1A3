@@ -38,6 +38,10 @@ employee delete <employee id>
 # Project Planning
 
 ## Common functionality
+* Create Employee class
+    * Priority: High
+    * Due Date: 11 Dec 2023 
+
 * reading and writing in csv file
 * run the right function for the command
 
