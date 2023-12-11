@@ -43,6 +43,8 @@ employee delete <employee id>
     * Due Date: 11 Dec 2023 
 
 * reading and writing in csv file
+    * Priority: High
+    * Due Date: 11 Dec 2023 
 * run the right function for the command
 
 ### Validate inputs

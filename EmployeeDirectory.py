@@ -1,3 +1,5 @@
+filename = "storage.csv"
+
 class Employee:
     def __init__(self, employee_id, first_name, last_name, phone_number, job_title, salary, start_date):
         self.employee_id = employee_id
@@ -17,5 +19,13 @@ class Employee:
             str(self.salary)          + " " + \
             self.start_date
 
+def write_employee(filename, employee):
+    pass
+
+def read_employees(filename):
+    pass
+
 employee1 = Employee(1, "Esther", "Dennis", "035424445", "barista", "65000", "01/08/2022" )
 print(employee1)
+
+write_employee(filename, employee1)
