@@ -1,4 +1,39 @@
 import csv
+import sys
+inputs = sys.argv
+# validate_command line
+def valid_command(cmd):
+    if (cmd == "create" or cmd == "update" or cmd == "search"):
+        return True
+    return False
+    
+if not valid_command(inputs[1]):
+    print("ERROR: Invalid command: Enter either create, update or search")
+    exit(1)
+
+if len(inputs) != 16:
+    print("ERROR: Incorrect number of arguments given")
+    exit(1)
+
+# validate_ employee id
+
+# validate first name
+
+# validate last name
+
+# validate phone number
+
+# validate job tittle
+
+# validate salary
+
+# calidate start date
+
+
+
+
+
+
 filename = "storage.csv"
 
 class Employee:
@@ -49,29 +84,32 @@ def write_employees_csv(filename, employees):
         writer.writerows(employee_data)
 
 def read_employees_csv(filename):
-    # try:
-    employees = []
-    with open(filename, "r") as file:
-        reader =csv.DictReader(file)
-        for row in reader:
-            employees.append(
-                Employee(
-                    row["employee_id"],
-                    row["first_name"], 
-                    row["last_name"], 
-                    row["phone_number"], 
-                    row["job_title"], 
-                    row["salary"], 
-                    row["start_date"]
-                )
-            )        
-    return(employees)
+    try:
+        employees = []
+        with open(filename, "r") as file:
+            reader =csv.DictReader(file)
+            for row in reader:
+                employees.append(
+                    Employee(
+                        row["employee_id"],
+                        row["first_name"], 
+                        row["last_name"], 
+                        row["phone_number"], 
+                        row["job_title"], 
+                        row["salary"], 
+                        row["start_date"]
+                    )
+                )        
+        return(employees)
+
+    except FileNotFoundError:
+        return []
+
 
 employee1 = Employee(1, "Esther", "Dennis", "035424445", "barista", "65000", "01/08/2022" )
-write_employees_csv(filename, [employee1, employee1, employee1])
-read_employees_csv(filename)
-
-print(read_employees_csv(filename))
+# write_employees_csv(filename, [employee1, employee1, employee1])
+employees = read_employees_csv(filename)
+print(employees)
 
 
 
