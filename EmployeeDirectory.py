@@ -48,17 +48,16 @@ def write_employees_csv(filename, employees):
         writer.writerows(employee_data)
 
 def read_employees_csv(filename):
-    # search employee in employees
-
-    #if the found the employee
-
-    # print employee
-    pass
-
+    # try:
+    with open(filename, "r") as file:
+        reader =csv.DictReader(file)
+        for row in reader:
+            print(row)
+   
 employee1 = Employee(1, "Esther", "Dennis", "035424445", "barista", "65000", "01/08/2022" )
+write_employees_csv(filename, [employee1, employee1, employee1])
+read_employees_csv(filename)
 
 
-
-write_employees_csv(filename, [employee1])
 
 
