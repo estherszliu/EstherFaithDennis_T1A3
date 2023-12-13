@@ -1,5 +1,7 @@
 import csv
 import sys
+from datetime import datetime
+
 inputs = sys.argv
 
 
@@ -20,6 +22,16 @@ def valid_name(name):
     if name.isalpha():
         return True
     return False
+
+# validate date function
+date_formet = "%d/%m/%y"
+
+def valid_date(date, date_formet):
+    try:
+        datetime.strptime(date, date_formet)
+        return True
+    except ValueError:
+        return False
 
  # validate_command line oparators   
 if not valid_command(inputs[1]):
@@ -90,8 +102,14 @@ if not valid_number(inputs[13]):
     print("ERROR: The salary should be a digital and a whole number.")
     exit(1)
 
-# calidate start date
+# validate start date key
+if inputs[14] != "start_date":
+    print("ERROR: Wrong input, please input start date as start_date." )
+    exit(1)
 
+# validate start date
+if not valid_date(inputs[15], date_formet):
+    print("ERROR: Invalid start date, please input format as dd/mm/yy")
 
 
 
