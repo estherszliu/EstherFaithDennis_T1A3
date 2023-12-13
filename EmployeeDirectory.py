@@ -69,8 +69,16 @@ if inputs[8] != "phone_number":
 if not valid_number(inputs[9]):
     print("ERROR: The phone number should be a digital number.")
     exit(1)
-    
-# validate job tittle
+
+# validate job title key
+if inputs[10] != "job_title":
+    print("ERROR: The job title should input as job_title.")
+    exit(1)  
+
+# validate job title as all alpha
+if not valid_name(inputs[11]):
+    print("ERROR: The job title is invalid, please input an alpha name for job title.")
+    exit(1)
 
 # validate salary
 
