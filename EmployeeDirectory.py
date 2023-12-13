@@ -80,7 +80,15 @@ if not valid_name(inputs[11]):
     print("ERROR: The job title is invalid, please input an alpha name for job title.")
     exit(1)
 
-# validate salary
+# validate salary key
+if inputs[12] != "salary":
+    print("ERROR: Wrong input, please input salary as salary." )
+    exit(1)
+
+# validate salary as all digit
+if not valid_number(inputs[13]):
+    print("ERROR: The salary should be a digital and a whole number.")
+    exit(1)
 
 # calidate start date
 
