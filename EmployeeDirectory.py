@@ -3,40 +3,59 @@ import sys
 inputs = sys.argv
 
 
-# validate_command line
+# validate command function
 def valid_command(cmd):
     if (cmd == "create" or cmd == "update" or cmd == "search"):
         return True
     return False
-    
-if not valid_command(inputs[1]):
-    print("ERROR: Invalid command: Enter either create, update or search")
-    exit(1)
 
-if len(inputs) != 16:
-    print("ERROR: Incorrect number of arguments given")
-    exit(1)
-#validate_employee_id - key whether is sting
-if inputs[2] != "employee_id" :
-    print("The employee id should be input as employee_id")
-    exit(1)
-# validate_ employee id - value
+# validate whether is number function
 def valid_number(num_as_string):
     if num_as_string.isdigit():
         return True
     return False
 
+# validate whether name is alpha function
+def valid_name(name):
+    if name.isalpha():
+        return True
+    return False
+
+ # validate_command line oparators   
+if not valid_command(inputs[1]):
+    print("ERROR: Invalid command: Enter either create, update or search")
+    exit(1)
+
+# validate the number of input
+if len(inputs) != 16:
+    print("ERROR: Incorrect number of arguments given")
+    exit(1)
+
+# validate_employee_id - key whether is sting
+if inputs[2] != "employee_id" :
+    print("The employee id should be input as employee_id")
+    exit(1)
+
+# validate_ employee id - value
 if not valid_number(inputs[3]):
     print("ERROR: The employee id should be a digital number.")
     exit(1)
+
 # validate first name as a key
 if inputs[4] != "first_name":
-    print("First name has to input as first_name")
+    print("ERROR: First name has to input as first_name")
     exit(1)
 
-#validate first name as isalpha input
+# validate first name as alpha input
+if not valid_name(inputs[5]):
+    print("ERROR: The first name is invalid, please input a valid name")
 
-# validate last name
+# validate last name key
+if inputs[6] != "last_name":
+    print("ERROR: The last name has to input as last_name")
+    exit(1)
+
+# validate last name as alpha input
 
 # validate phone number
 
