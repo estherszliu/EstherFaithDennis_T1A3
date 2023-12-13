@@ -1,6 +1,7 @@
 import csv
 import sys
 inputs = sys.argv
+
 # validate_command line
 def valid_command(cmd):
     if (cmd == "create" or cmd == "update" or cmd == "search"):
@@ -15,8 +16,15 @@ if len(inputs) != 16:
     print("ERROR: Incorrect number of arguments given")
     exit(1)
 
-# validate_ employee id
+# validate_ employee id - value
+def valid_number(num_as_string):
+    if num_as_string.isdigit():
+        return True
+    return False
 
+if not valid_number(inputs[3]):
+    print("ERROR: The employee id should be a digital number.")
+    exit(1)
 # validate first name
 
 # validate last name
