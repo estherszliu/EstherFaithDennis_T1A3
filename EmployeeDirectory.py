@@ -56,9 +56,20 @@ if inputs[6] != "last_name":
     exit(1)
 
 # validate last name as alpha input
+if not valid_name(inputs[7]):
+    print("ERROR: The last name is invalid, please input a valid name")
+    exit(1)
 
-# validate phone number
+# validate phone number key
+if inputs[8] != "phone_number":
+    print("ERROR: The phone number should input as phone_number")
+    exit(1)
 
+# validate phone number as all digit
+if not valid_number(inputs[9]):
+    print("ERROR: The phone number should be a digital number.")
+    exit(1)
+    
 # validate job tittle
 
 # validate salary
