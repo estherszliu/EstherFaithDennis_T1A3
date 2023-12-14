@@ -7,7 +7,7 @@ inputs = sys.argv
 
 # validate command function
 def valid_command(cmd):
-    if (cmd == "create" or cmd == "update" or cmd == "search"):
+    if (cmd == "create" or cmd == "update" or cmd == "search" or cmd == "delete"):
         return True
     return False
 
@@ -115,6 +115,7 @@ if not valid_date(inputs[15], date_formet):
 
 
 
+
 filename = "storage.csv"
 
 class Employee:
@@ -186,12 +187,21 @@ def read_employees_csv(filename):
     except FileNotFoundError:
         return []
 
-
-employee1 = Employee(1, "Esther", "Dennis", "035424445", "barista", "65000", "01/08/2022" )
-# write_employees_csv(filename, [employee1, employee1, employee1])
+# create new_employee to a file
+if inputs[1] == "create":
+    new_employee =Employee(inputs[3], inputs[5],inputs[7], inputs[9], inputs[11],inputs[13], inputs[15])
+    print( new_employee)
+    write_employees_csv(filename, [new_employee])
 employees = read_employees_csv(filename)
 print(employees)
 
+# check the employee whether exist
+
+# for the employee in Employee
+    # if the the input_employee_id == employee[employee_id]
+    #print (employee id already exist, please input a valid employee id)
+    # return turn
+    # return false
 
 
 
