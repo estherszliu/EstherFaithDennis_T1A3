@@ -2,7 +2,7 @@
 
 ### Create employees
 ```
-employee _create <employee id> <first name> <last name>  <phone number> <job title> <salary> <start date> _
+employee _create <employee id> <first name> <last name>  <phone number> <job title> <salary> <start date>
 ```
 
 ### Search employees
