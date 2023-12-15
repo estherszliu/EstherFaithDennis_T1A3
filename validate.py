@@ -74,6 +74,63 @@ def valid_create_inputs(inputs):
     
     return True
 
+# valid search 
+def valid_search_inputs(inputs):
+    if len(inputs) > 20 or len(inputs) % 2 != 0:
+        print("ERROR: Not a valid number of inputs")
+        return False
+    
+    fields = inputs[2:]
+    # see how many search field
+    fields_number = int((len(inputs) - 2) / 2)
+    print(fields)
+    seen = set()
+    
+    for i in range(0, fields_number * 2, 2):
+        field = fields[i]
+        value = fields[i+1]
+     
+        if (field in seen):
+            print("ERROR: Don't use same field twice")
+            return False
+
+        seen.add(field)
+    if field == "--employee-id":
+        if (not valid_number(value)):
+            return False       
+    
+    if field == "--first-name":
+        if (not valid_name(value)):
+            return False       
+    
+    if field == "--last-name":
+        if (not valid_name(value)):
+            return False 
+    
+    if field == "--phone-number":
+        if (not valid_number(value)):
+            return False 
+    
+    if field == "--job-title ":
+        if (not valid_name(value)):
+            return False 
+    
+    if field == "--max-salary":
+        if (not valid_number(value)):
+            return False 
+    
+    if field == "--min-salary":
+        if (not valid_number(value)):
+            return False 
+    
+    if field == "--max-start-date":
+        if (not valid_date(value)):
+            return False 
+        
+    if field == "--min-start-date":
+        if (not valid_date(value)):
+            return False 
+    
 def valid_inputs(inputs):
     
     # check if command correct
@@ -83,3 +140,5 @@ def valid_inputs(inputs):
 
     if inputs[1] == "create":
         return valid_create_inputs(inputs)
+    elif inputs[1] == "search":
+        return valid_search_inputs(inputs)

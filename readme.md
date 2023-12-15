@@ -76,7 +76,7 @@ employee delete <employee id>
 I will explain a plan for create employee feature
 
 ### How it will be implemented
-It will be implemented with a `def create(input_data)` function. The input data will be a list of inputs give by the user. It will check if the user input is correct before writing the new employee to a local csv file. 
+It will be implemented with a `def create_employee(employee_data)` function. The input data will be a list of inputs give by the user. It will check if the user input is correct before writing the new employee to a local csv file. 
 
 ### Task checklist for create employees
 - [ ] Validate the number of input
@@ -175,3 +175,7 @@ It will be implemented with a `def delete(input_data)` function. The input data 
     * Due Date: 14 Dec 2023 
 
 Most the task is high priority because delete feature is needed for all other feature to work properly. 
+
+project mangement:
+
+![sceenshort for ](image.png)
