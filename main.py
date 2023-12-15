@@ -53,16 +53,16 @@ def search_employee(search_data):
             if field == '--job-title' and employee.job_title != value:
                 is_match = False
 
-            if field == '--max-salary' and employee.salary > value:
+            if field == '--max-salary' and employee.salary > int(value):
                 is_match = False
 
-            if field == '--min-salary ' and employee.salary < value:
+            if field == '--min-salary' and employee.salary < int(value):
                 is_match = False
 
-            if field == '--max-start-date' and datetime.strptime(employee.start_date, '%d/%m/%y') > datetime.strptime(value, '%d/%m/%y'):
+            if field == '--max-start-date' and datetime.strptime(employee.start_date, '%d/%m/%y') < datetime.strptime(value, '%d/%m/%y'):
                 is_match = False
 
-            if field == '--min-start-date' and datetime.strptime(employee.start_date, '%d/%m/%y') < datetime.strptime(value, '%d/%m/%y'):
+            if field == '--min-start-date' and datetime.strptime(employee.start_date, '%d/%m/%y') > datetime.strptime(value, '%d/%m/%y'):
                 is_match = False
         
         if is_match:
@@ -71,13 +71,6 @@ def search_employee(search_data):
     for employee in match_employees:
         print(employee)
             
-        
-
-
-
-
-
-
 
 # check if valid input
 if not valid_inputs(inputs):
@@ -91,5 +84,8 @@ if inputs[1] == "create":
 if inputs[1] =="search":
     search_data = inputs[2:]
     search_employee(search_data)
+
+if inputs[1] == "update":
+    pass 
 
   

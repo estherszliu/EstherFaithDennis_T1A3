@@ -99,47 +99,103 @@ def valid_search_inputs(inputs):
         if field == "--employee-id":
             if (not valid_number(value)):
                 print("ERROR: employee-id is not valid")
-                return False       
-        
-        if field == "--first-name":
+                return False    
+        elif field == "--first-name":
             if (not valid_name(value)):
                 print("ERROR: first-name is not valid")
-                return False       
-        
-        if field == "--last-name":
+                return False     
+        elif field == "--last-name":
             if (not valid_name(value)):
                 print("ERROR: last-name is not valid")
                 return False 
-        
-        if field == "--phone-number":
+        elif field == "--phone-number":
             if (not valid_number(value)):
                 print("ERROR: phone-number is not valid")
-                return False 
-        
-        if field == "--job-title ":
+                return False
+        elif field == "--job-title ":
             if (not valid_name(value)):
                 print("ERROR: job-title is not valid")
-                return False 
-        
-        if field == "--max-salary":
+                return False
+        elif field == "--max-salary":
             if (not valid_number(value)):
                 print("ERROR: max-salary is not valid")
-                return False 
-        
-        if field == "--min-salary":
+                return False
+        elif field == "--min-salary":
             if (not valid_number(value)):
                 print("ERROR: min-salary is not valid")
-                return False 
-        
-        if field == "--max-start-date":
+                return False
+        elif field == "--max-start-date":
             if (not valid_date(value)):
                 print("ERROR: max-start-date is not valid")
-                return False 
-            
-        if field == "--min-start-date":
+                return False
+        elif field == "--min-start-date":
             if (not valid_date(value)):
                 print("ERROR: min-start-date is not valid")
+                return False
+        else:
+            print("ERROR: Invalid field is given")
+            return False 
+    return True
+
+# valid update 
+def valid_update_inputs(inputs):
+    if len(inputs) > 15 or len(inputs) % 2 != 1:
+        print("ERROR: Not a valid number of inputs")
+        return False
+    
+    if len(inputs) < 5:
+        print("ERROR: Not enough inputs")
+        return False
+    
+    employee_id = inputs[2]
+    if (not valid_number(employee_id)):
+        print("ERROR: Not a valid employee id")
+        return False
+
+    
+    fields = inputs[3:]
+    # see how many search field
+    fields_number = int((len(inputs) - 2) / 2)
+    
+    seen = set()
+    
+    for i in range(0, fields_number * 2, 2):
+        field = fields[i]
+        value = fields[i+1]
+     
+        if (field in seen):
+            print("ERROR: Don't use same field twice")
+            return False
+
+        seen.add(field)
+    
+        if field == "--first-name":
+            if (not valid_name(value)):
+                print("ERROR: first-name is not valid")
+                return False     
+        elif field == "--last-name":
+            if (not valid_name(value)):
+                print("ERROR: last-name is not valid")
                 return False 
+        elif field == "--phone-number":
+            if (not valid_number(value)):
+                print("ERROR: phone-number is not valid")
+                return False
+        elif field == "--job-title ":
+            if (not valid_name(value)):
+                print("ERROR: job-title is not valid")
+                return False
+        elif field == "--salary":
+            if (not valid_number(value)):
+                print("ERROR: salary is not valid")
+                return False
+        elif field == "--start-date":
+            if (not valid_date(value)):
+                print("ERROR: start-date is not valid")
+                return False
+        else:
+            print("ERROR: Invalid field is given")
+            return False 
     return True
     
 def valid_inputs(inputs):
@@ -153,3 +209,5 @@ def valid_inputs(inputs):
         return valid_create_inputs(inputs)
     elif inputs[1] == "search":
         return valid_search_inputs(inputs)
+    elif inputs[1] == "update":
+        return valid_update_inputs(inputs)

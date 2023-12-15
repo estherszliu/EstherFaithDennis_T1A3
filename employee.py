@@ -6,7 +6,7 @@ class Employee:
         self.last_name = last_name
         self.phone_number = phone_number
         self.job_title = job_title
-        self.salary = salary
+        self.salary = int(salary)
         self.start_date = start_date
     # print data from employee
     def __str__(self):
