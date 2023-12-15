@@ -1,4 +1,5 @@
 import sys
+import csv
 from datetime import datetime
 from validate import valid_inputs
 from employee import Employee
@@ -71,6 +72,31 @@ def search_employee(search_data):
     for employee in match_employees:
         print(employee)
             
+#update employee data
+def update_data(update_employee):
+    id = update_employee[0]
+    updateData = update_employee[1:]
+
+    employees = read_employees_csv(filename)
+    for employee in employees:
+        if employee.employee_id == id:
+            for i in range(0, len(updateData), 2):
+                field = updateData[i] 
+                value = updateData[i+1]
+                if field == '--first-name':
+                    employee.first_name = value
+                elif field == '--last-name':
+                    employee.last_name = value
+                elif field == '--phone-number':
+                    employee.phone_number = value
+                elif field == '--job-title':
+                    employee.job_title = value
+                elif field == '--salary':
+                    employee.salary = value
+                elif field == '--start-date':
+                    employee.start_date = value
+    write_employees_csv(filename, employees)
+
 
 # check if valid input
 if not valid_inputs(inputs):
@@ -86,6 +112,7 @@ if inputs[1] =="search":
     search_employee(search_data)
 
 if inputs[1] == "update":
-    pass 
+    update_employee = inputs[2:]
+    update_data(update_employee)
 
   
