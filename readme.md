@@ -178,4 +178,6 @@ Most the task is high priority because delete feature is needed for all other fe
 
 project mangement:
 
-![sceenshort for ](image.png)
+![sceenshort1](image.png)
+![sceenshort2](image-1.png)
+![sceenshort3](image-2.png)
