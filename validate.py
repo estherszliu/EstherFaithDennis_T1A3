@@ -83,7 +83,7 @@ def valid_search_inputs(inputs):
     fields = inputs[2:]
     # see how many search field
     fields_number = int((len(inputs) - 2) / 2)
-    print(fields)
+    
     seen = set()
     
     for i in range(0, fields_number * 2, 2):
@@ -95,41 +95,52 @@ def valid_search_inputs(inputs):
             return False
 
         seen.add(field)
-    if field == "--employee-id":
-        if (not valid_number(value)):
-            return False       
-    
-    if field == "--first-name":
-        if (not valid_name(value)):
-            return False       
-    
-    if field == "--last-name":
-        if (not valid_name(value)):
-            return False 
-    
-    if field == "--phone-number":
-        if (not valid_number(value)):
-            return False 
-    
-    if field == "--job-title ":
-        if (not valid_name(value)):
-            return False 
-    
-    if field == "--max-salary":
-        if (not valid_number(value)):
-            return False 
-    
-    if field == "--min-salary":
-        if (not valid_number(value)):
-            return False 
-    
-    if field == "--max-start-date":
-        if (not valid_date(value)):
-            return False 
+
+        if field == "--employee-id":
+            if (not valid_number(value)):
+                print("ERROR: employee-id is not valid")
+                return False       
         
-    if field == "--min-start-date":
-        if (not valid_date(value)):
-            return False 
+        if field == "--first-name":
+            if (not valid_name(value)):
+                print("ERROR: first-name is not valid")
+                return False       
+        
+        if field == "--last-name":
+            if (not valid_name(value)):
+                print("ERROR: last-name is not valid")
+                return False 
+        
+        if field == "--phone-number":
+            if (not valid_number(value)):
+                print("ERROR: phone-number is not valid")
+                return False 
+        
+        if field == "--job-title ":
+            if (not valid_name(value)):
+                print("ERROR: job-title is not valid")
+                return False 
+        
+        if field == "--max-salary":
+            if (not valid_number(value)):
+                print("ERROR: max-salary is not valid")
+                return False 
+        
+        if field == "--min-salary":
+            if (not valid_number(value)):
+                print("ERROR: min-salary is not valid")
+                return False 
+        
+        if field == "--max-start-date":
+            if (not valid_date(value)):
+                print("ERROR: max-start-date is not valid")
+                return False 
+            
+        if field == "--min-start-date":
+            if (not valid_date(value)):
+                print("ERROR: min-start-date is not valid")
+                return False 
+    return True
     
 def valid_inputs(inputs):
     
