@@ -198,6 +198,17 @@ def valid_update_inputs(inputs):
             return False 
     return True
     
+
+# validate delete
+def valid_delete_inputs(inputs):
+    if len(inputs) != 3:
+        print("ERROR: Not a valid number of inputs, if you wish to delete an employee, please input delete follow by employee id")
+        return False
+    if not valid_number(inputs[2]):
+        print("ERROR: The employee id should be a digital number, please input a correct employee to delete.")
+        return False
+    
+
 def valid_inputs(inputs):
     
     # check if command correct
@@ -211,3 +222,5 @@ def valid_inputs(inputs):
         return valid_search_inputs(inputs)
     elif inputs[1] == "update":
         return valid_update_inputs(inputs)
+    elif inputs[1] == "delete":
+        return valid_delete_inputs(inputs)

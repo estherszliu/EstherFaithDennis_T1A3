@@ -155,7 +155,7 @@ Most the task is high priority because update feature is needed for all other fe
 I will explain a plan for delete employee feature
 
 ### How it will be implemented
-It will be implemented with a `def delete(input_data)` function. The input data will be the employee's ID which will be the number by the user input. 
+It will be implemented with a `def valid_delete_inputs(inputs)` for validate and `def delete(input_data)` function. The input data will be the employee's ID which will be the number by the user input. 
 
 ### Task checklist for delete employees
 - [ ] Validate the input is correct
