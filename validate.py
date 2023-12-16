@@ -207,7 +207,7 @@ def valid_delete_inputs(inputs):
     if not valid_number(inputs[2]):
         print("ERROR: The employee id should be a digital number, please input a correct employee to delete.")
         return False
-    
+    return True
 
 def valid_inputs(inputs):
     

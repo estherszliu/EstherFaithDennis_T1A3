@@ -76,7 +76,7 @@ employee delete <employee id>
 I will explain a plan for create employee feature
 
 ### How it will be implemented
-It will be implemented with a `def create_employee(employee_data)` function. The input data will be a list of inputs give by the user. It will check if the user input is correct before writing the new employee to a local csv file. 
+It will be implemented with a `def valid_create_inputs(inputs)` for validate and a `def create_employee(employee_data)` function. The input data will be a list of inputs give by the user. It will check if the user input is correct before writing the new employee to a local csv file. 
 
 ### Task checklist for create employees
 - [ ] Validate the number of input
@@ -105,7 +105,7 @@ Most the task is high priority because create feature is needed for all other fe
 I will explain a plan for search employee feature
 
 ### How it will be implemented
-It will be implemented with a `def search(input_data)` function. The input data will be the employee's ID which will be the number by the user input. 
+It will be implemented with a `def valid_search_inputs(inputs)`for validate and a `def search_employee(search_data))` function. The input data will be the employee's ID which will be the number by the user input. 
 
 ### Task checklist for search employees
 - [ ] Validate the input is correct
@@ -130,7 +130,7 @@ Most the task is high priority because search feature is needed for all other fe
 I will explain a plan for update employee feature
 
 ### How it will be implemented
-It will be implemented with a `def update(input_data)` function. The input data will be the employee's ID which will be the number by the user input. 
+It will be implemented with a `def valid_update_inputs(inputs)`for validate and a `def update_data(update_employee)` function. The input data will be the employee's ID which will be the number by the user input. 
 
 ### Task checklist for update employees
 - [ ] Validate the input is correct
@@ -155,7 +155,7 @@ Most the task is high priority because update feature is needed for all other fe
 I will explain a plan for delete employee feature
 
 ### How it will be implemented
-It will be implemented with a `def valid_delete_inputs(inputs)` for validate and `def delete(input_data)` function. The input data will be the employee's ID which will be the number by the user input. 
+It will be implemented with a `def valid_delete_inputs(inputs)` for validate and `def delete_data(delete_employee)` function. The input data will be the employee's ID which will be the number by the user input. 
 
 ### Task checklist for delete employees
 - [ ] Validate the input is correct
@@ -181,3 +181,4 @@ project mangement:
 ![sceenshort1](image.png)
 ![sceenshort2](image-1.png)
 ![sceenshort3](image-2.png)
+![delete employee](image-3.png)

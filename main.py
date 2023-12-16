@@ -111,6 +111,34 @@ def update_data(update_employee):
     write_employees_csv(filename, employees)
 
     return True
+
+# delete employee
+def delete_data(delete_employee):
+    id = delete_employee
+
+    employees = read_employees_csv(filename)
+
+    employee = None
+
+    for emp in employees:
+        if emp.employee_id == id:
+            employee = emp
+
+    if  employee == None:
+        print("ERROR: Delete employee can not found, please input the existing employee id to delete")
+        return False    
+    
+   
+    if employee.employee_id == id:
+        print(f"Employee deleted: {employee}")
+        employees.remove(employee)
+
+    if  employee == None:
+        print("ERROR: Delete employee can not found, please input the existing employee id to delete")
+        return False       
+    write_employees_csv(filename, employees)    
+    
+
 # check if valid input
 if not valid_inputs(inputs):
     exit(1)
@@ -128,4 +156,6 @@ if inputs[1] == "update":
     update_employee = inputs[2:]
     update_data(update_employee)
 
-  
+if inputs[1] == "delete":
+    delete_employee = inputs[2]
+    delete_data(delete_employee)
