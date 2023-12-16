@@ -5,7 +5,6 @@ from validate import valid_inputs
 from employee import Employee
 from csv_helper import write_employees_csv, read_employees_csv
 
-inputs = sys.argv
 filename = "storage.csv"
 
 # create employee function
@@ -16,7 +15,7 @@ def create_employee(employee_data):
 
     for employee in employees:
         if employee.employee_id == id:
-            print("ERROR: The employee id already exist, please input a valid employee id")
+            print("    [ERROR]: The employee id already exist, please input a valid employee id")
             return False
 
     new_employee = Employee(employee_data[0], employee_data[1], employee_data[2], employee_data[3], employee_data[4], employee_data[5], employee_data[6])
@@ -70,11 +69,15 @@ def search_employee(search_data):
         
         if is_match:
             match_employees.append(employee)
-        
+    
     for employee in match_employees:
         print(employee)
 
-    return True       
+    if len(match_employees) == 0:
+        print("No employees match your search")
+
+    return True
+      
 #update employee data
 def update_data(update_employee):
     id = update_employee[0]
@@ -89,7 +92,7 @@ def update_data(update_employee):
             employee = emp
     
     if  employee == None:
-        print("ERROR: Update employee can not found, please input the correct employee id")
+        print("    [ERROR]: Update employee can not found, please input the correct employee id")
         return False
     
     for i in range(0, len(updateData), 2):
@@ -119,43 +122,107 @@ def delete_data(delete_employee):
     employees = read_employees_csv(filename)
 
     employee = None
-
     for emp in employees:
         if emp.employee_id == id:
             employee = emp
 
     if  employee == None:
-        print("ERROR: Delete employee can not found, please input the existing employee id to delete")
+        print("    [ERROR]: Delete employee can not found, please input the existing employee id to delete")
         return False    
     
-   
-    if employee.employee_id == id:
-        print(f"Employee deleted: {employee}")
-        employees.remove(employee)
-
-    if  employee == None:
-        print("ERROR: Delete employee can not found, please input the existing employee id to delete")
-        return False       
+    print(f"Employee deleted: {employee}")
+    employees.remove(employee)
+     
     write_employees_csv(filename, employees)    
+    return True
+
+# welcome the user and get input
+print("")
+print("")
+print("Welcome to the Employee Directory")
+
+while(True):
+    print("")
+    print("Choose from one of these commands")
+    print("  Enter 1 to creates a new employee")
+    print("  Enter 2 to search for an employee")
+    print("  Enter 3 to update the data for one employee")
+    print("  Enter 4 to delete one employee")
+    print("  Enter 5 to exit")
+    print("")
+    command = input("Enter your command: ")
+    command = command.replace("  ", " ")
+
+    print("")
+    user_inputs = None
+    if command == "1":
+        print("Enter the new employee data in this format")
+        print("    <employee-id> <first-name> <last-name> <phone-number> <job-title> <salary> <start-date>")
+        print("")
+        user_inputs = input("Enter the new employee data: ")
+        print("")
+
+    elif command == "2":
+        print("Enter the search fields exactly like left column and space follow by the contents you want to find, leave blank if you want to see all users")
+        print("    --employee-id     <employee-id>")
+        print("    --first-name      <first-name>")
+        print("    --last-name       <last-name>")
+        print("    --phone-number    <phone-number>")
+        print("    --job-title       <job-title>")
+        print("    --max-salary      <max-salary>")
+        print("    --min-salary      <min-salary>")
+        print("    --max-start-date  <max-start-date>")
+        print("    --min-start-date  <min-start-date>")
+
+        print("")
+        user_inputs = input("Enter the employee search fields: ")
+        print("")
+
+    elif command == "3":
+        print("Enter the employee id followed by fields you want to update")
+        print("    <employee-id> --first-name      <first-name>")
+        print("                  --last-name       <last-name>")
+        print("                  --phone-number    <phone-number>")
+        print("                  --job-title       <job-title>")
+        print("                  --max-salary      <max-salary>")
+        print("                  --min-salary      <min-salary>")
+        print("                  --max-start-date  <max-start-date>")
+        print("                  --min-start-date  <min-start-date>")
+
+        print("")
+        user_inputs = input("Enter the employee id followed by fields to be updated: ")
+        print("")
+    elif command == "4":
+        print("")
+        user_inputs = input("Enter the employee id to be deleted: ")
+        print("")
+    elif command == "5":
+        exit(0)
+    else:
+        print("    [ERROR]: Program needs a valid command")
+        continue
+
+    user_inputs = user_inputs.replace("  ", " ")
+    inputs = user_inputs.split()
+
+    # check if valid input
+    if not valid_inputs(command, inputs):
+        continue
+
+    # create new_employee to a file
+    if command == "1":
+        employee_data = inputs
+        create_employee(employee_data)
+    elif command =="2":
+        search_data = inputs
+        search_employee(search_data)
+    elif command == "3":
+        update_employee = inputs
+        update_data(update_employee)
+    elif command == "4":
+        delete_employee = inputs[0]
+        delete_data(delete_employee)
+
+
     
-
-# check if valid input
-if not valid_inputs(inputs):
-    exit(1)
-
-# create new_employee to a file
-if inputs[1] == "create":
-    employee_data = inputs[2:]
-    create_employee(employee_data)
-
-if inputs[1] =="search":
-    search_data = inputs[2:]
-    search_employee(search_data)
-
-if inputs[1] == "update":
-    update_employee = inputs[2:]
-    update_data(update_employee)
-
-if inputs[1] == "delete":
-    delete_employee = inputs[2]
-    delete_data(delete_employee)
+    

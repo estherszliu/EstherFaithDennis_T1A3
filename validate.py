@@ -2,7 +2,7 @@ from datetime import datetime
 
 # validate command function
 def valid_command(cmd):
-    if (cmd == "create" or cmd == "update" or cmd == "search" or cmd == "delete"):
+    if (cmd == "1" or cmd == "2" or cmd == "3" or cmd == "4" or cmd =="5"):
         return True
     return False
 
@@ -33,56 +33,56 @@ def valid_date(date):
 def valid_create_inputs(inputs):
 
     # validate the number of input
-    if len(inputs) != 9:
-        print("ERROR: Incorrect number of arguments given, please input format with space seperate as create employee_id first_name last_name phone_number job_title salary start_date")
+    if len(inputs) != 7:
+        print("    [ERROR]: Incorrect number of arguments given, please input format with space seperate as create employee_id first_name last_name phone_number job_title salary start_date")
         return False
 
     # validate_ employee id - value
-    if not valid_number(inputs[2]):
-        print("ERROR: The employee id should be a digital number.")
+    if not valid_number(inputs[0]):
+        print("    [ERROR]: The employee id should be a digital number.")
         return False
 
     # validate first name as alpha input
-    if not valid_name(inputs[3]):
-        print("ERROR: The first name is invalid, please input a valid name")
+    if not valid_name(inputs[1]):
+        print("    [ERROR]: The first name is invalid, please input a valid name")
         return False
 
     # validate last name as alpha input
-    if not valid_name(inputs[4]):
-        print("ERROR: The last name is invalid, please input a valid name")
+    if not valid_name(inputs[2]):
+        print("    [ERROR]: The last name is invalid, please input a valid name")
         return False
 
     # validate phone number as all digit
-    if not valid_number(inputs[5]):
-        print("ERROR: The phone number should be a digital number.")
+    if not valid_number(inputs[3]):
+        print("    [ERROR]: The phone number should be a digital number.")
         return False
 
     # validate job title as all alpha
-    if not valid_name(inputs[6]):
-        print("ERROR: The job title is invalid, please input an alpha name for job title.")
+    if not valid_name(inputs[4]):
+        print("    [ERROR]: The job title is invalid, please input an alpha name for job title.")
         return False
     
     # validate salary as all digit
-    if not valid_number(inputs[7]):
-        print("ERROR: The salary should be a digital and a whole number.")
+    if not valid_number(inputs[5]):
+        print("    [ERROR]: The salary should be a digital and a whole number.")
         return False
 
     # validate start date
-    if not valid_date(inputs[8]):
-        print("ERROR: Invalid start date, please input format as dd/mm/yy")
+    if not valid_date(inputs[6]):
+        print("    [ERROR]: Invalid start date, please input format as dd/mm/yy")
         return False
     
     return True
 
 # valid search 
 def valid_search_inputs(inputs):
-    if len(inputs) > 20 or len(inputs) % 2 != 0:
-        print("ERROR: Not a valid number of inputs")
+    if len(inputs) > 18 or len(inputs) % 2 != 0:
+        print("    [ERROR]: Not a valid number of inputs")
         return False
     
-    fields = inputs[2:]
+    fields = inputs[0:]
     # see how many search field
-    fields_number = int((len(inputs) - 2) / 2)
+    fields_number = int((len(inputs)) / 2)
     
     seen = set()
     
@@ -91,71 +91,71 @@ def valid_search_inputs(inputs):
         value = fields[i+1]
      
         if (field in seen):
-            print("ERROR: Don't use same field twice")
+            print("    [ERROR]: Don't use same field twice")
             return False
 
         seen.add(field)
 
         if field == "--employee-id":
             if (not valid_number(value)):
-                print("ERROR: employee-id is not valid")
+                print("    [ERROR]: employee-id is not valid")
                 return False    
         elif field == "--first-name":
             if (not valid_name(value)):
-                print("ERROR: first-name is not valid")
+                print("    [ERROR]: first-name is not valid")
                 return False     
         elif field == "--last-name":
             if (not valid_name(value)):
-                print("ERROR: last-name is not valid")
+                print("    [ERROR]: last-name is not valid")
                 return False 
         elif field == "--phone-number":
             if (not valid_number(value)):
-                print("ERROR: phone-number is not valid")
+                print("    [ERROR]: phone-number is not valid")
                 return False
         elif field == "--job-title ":
             if (not valid_name(value)):
-                print("ERROR: job-title is not valid")
+                print("    [ERROR]: job-title is not valid")
                 return False
         elif field == "--max-salary":
             if (not valid_number(value)):
-                print("ERROR: max-salary is not valid")
+                print("    [ERROR]: max-salary is not valid")
                 return False
         elif field == "--min-salary":
             if (not valid_number(value)):
-                print("ERROR: min-salary is not valid")
+                print("    [ERROR]: min-salary is not valid")
                 return False
         elif field == "--max-start-date":
             if (not valid_date(value)):
-                print("ERROR: max-start-date is not valid")
+                print("    [ERROR]: max-start-date is not valid")
                 return False
         elif field == "--min-start-date":
             if (not valid_date(value)):
-                print("ERROR: min-start-date is not valid")
+                print("    [ERROR]: min-start-date is not valid")
                 return False
         else:
-            print("ERROR: Invalid field is given")
+            print("    [ERROR]: Invalid field is given")
             return False 
     return True
 
 # valid update 
 def valid_update_inputs(inputs):
-    if len(inputs) > 15 or len(inputs) % 2 != 1:
-        print("ERROR: Not a valid number of inputs")
+    if len(inputs) > 13 or len(inputs) % 2 != 1:
+        print("    [ERROR]: Not a valid number of inputs")
         return False
     
-    if len(inputs) < 5:
-        print("ERROR: Not enough inputs")
+    if len(inputs) < 3:
+        print("    [ERROR]: Not enough inputs")
         return False
     
-    employee_id = inputs[2]
+    employee_id = inputs[0]
     if (not valid_number(employee_id)):
-        print("ERROR: Not a valid employee id")
+        print("    [ERROR]: Not a valid employee id")
         return False
 
     
-    fields = inputs[3:]
+    fields = inputs[1:]
     # see how many search field
-    fields_number = int((len(inputs) - 2) / 2)
+    fields_number = int((len(fields)) / 2)
     
     seen = set()
     
@@ -164,63 +164,58 @@ def valid_update_inputs(inputs):
         value = fields[i+1]
      
         if (field in seen):
-            print("ERROR: Don't use same field twice")
+            print("    [ERROR]: Don't use same field twice")
             return False
 
         seen.add(field)
     
         if field == "--first-name":
             if (not valid_name(value)):
-                print("ERROR: first-name is not valid")
+                print("    [ERROR]: first-name is not valid")
                 return False     
         elif field == "--last-name":
             if (not valid_name(value)):
-                print("ERROR: last-name is not valid")
+                print("    [ERROR]: last-name is not valid")
                 return False 
         elif field == "--phone-number":
             if (not valid_number(value)):
-                print("ERROR: phone-number is not valid")
+                print("    [ERROR]: phone-number is not valid")
                 return False
-        elif field == "--job-title ":
+        elif field == "--job-title":
             if (not valid_name(value)):
-                print("ERROR: job-title is not valid")
+                print("    [ERROR]: job-title is not valid")
                 return False
         elif field == "--salary":
             if (not valid_number(value)):
-                print("ERROR: salary is not valid")
+                print("    [ERROR]: salary is not valid")
                 return False
         elif field == "--start-date":
             if (not valid_date(value)):
-                print("ERROR: start-date is not valid")
+                print("    [ERROR]: start-date is not valid")
                 return False
         else:
-            print("ERROR: Invalid field is given")
+            print("    [ERROR]: Invalid field is given")
             return False 
     return True
     
 
 # validate delete
 def valid_delete_inputs(inputs):
-    if len(inputs) != 3:
-        print("ERROR: Not a valid number of inputs, if you wish to delete an employee, please input delete follow by employee id")
+    if len(inputs) != 1:
+        print("    [ERROR]: Not a valid number of inputs, if you wish to delete an employee, please enter 4 then type the employee id")
         return False
-    if not valid_number(inputs[2]):
-        print("ERROR: The employee id should be a digital number, please input a correct employee to delete.")
+    if not valid_number(inputs[0]):
+        print("    [ERROR]: The employee id should be a digital number, please input a correct employee to delete.")
         return False
     return True
 
-def valid_inputs(inputs):
-    
-    # check if command correct
-    if (len(inputs) < 2 or not valid_command(inputs[1])):
-        print("ERROR: Program needs a valid command")
-        return False
+def valid_inputs(command, inputs):
 
-    if inputs[1] == "create":
+    if command == "1":
         return valid_create_inputs(inputs)
-    elif inputs[1] == "search":
+    elif command == "2":
         return valid_search_inputs(inputs)
-    elif inputs[1] == "update":
+    elif command == "3":
         return valid_update_inputs(inputs)
-    elif inputs[1] == "delete":
+    elif command == "4":
         return valid_delete_inputs(inputs)

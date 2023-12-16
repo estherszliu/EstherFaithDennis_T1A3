@@ -110,19 +110,19 @@ It will be implemented with a `def valid_search_inputs(inputs)`for validate and 
 ### Task checklist for search employees
 - [ ] Validate the input is correct
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 15 Dec 2023 
 - [ ] Print fail message to the user if the input incorrect
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 15 Dec 2023 
 - [ ] Validate the input is match the employee data
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 15 Dec 2023 
 - [ ] Print fail message to the user if the input can not found in the  employee data
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 15 Dec 2023 
 - [ ] Print the employee data to the user
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 15 Dec 2023 
 
 Most the task is high priority because search feature is needed for all other feature to work properly. 
 
@@ -135,19 +135,19 @@ It will be implemented with a `def valid_update_inputs(inputs)`for validate and 
 ### Task checklist for update employees
 - [ ] Validate the input is correct
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print fail message to the user if the input incorrect
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Validate the input is match the employee data
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print fail message to the user if the input can not found in the  employee data
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print the employee data to the user
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 
 Most the task is high priority because update feature is needed for all other feature to work properly. 
 
@@ -160,19 +160,19 @@ It will be implemented with a `def valid_delete_inputs(inputs)` for validate and
 ### Task checklist for delete employees
 - [ ] Validate the input is correct
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print fail message to the user if the input incorrect
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Validate the input is match the employee data
     * Priority: High
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print fail message to the user if the input can not found in the  employee data
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 - [ ] Print the sucessful delete messege to the user
     * Priority: Medium
-    * Due Date: 14 Dec 2023 
+    * Due Date: 16 Dec 2023 
 
 Most the task is high priority because delete feature is needed for all other feature to work properly. 
 

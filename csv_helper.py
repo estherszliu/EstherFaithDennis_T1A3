@@ -36,5 +36,5 @@ def read_employees_csv(filename):
                 )        
         return(employees)
 
-    except FileNotFoundError:
+    except FileNotFound    [ERROR]:
         return []
