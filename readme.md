@@ -182,3 +182,10 @@ project mangement:
 ![sceenshort2](image-1.png)
 ![sceenshort3](image-2.png)
 ![delete employee](image-3.png)
+
+![Doing test file](image-4.png)
+
+# write a Unittest for the app
+- [ ] Write some function to test the code whether is working
+    * Priority: Medium
+    * Due Date: 18 Dec 2023 
