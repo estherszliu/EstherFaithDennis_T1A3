@@ -1,3 +1,8 @@
+# THIS IS ESTHER FAITH DENNIS T1A3 
+
+### Git repo
+[link to git](https://github.com/estherszliu/EstherFaithDennis_T1A3)
+
 # App Usage
 
 ### Create employees
@@ -189,3 +194,34 @@ project mangement:
 - [ ] Write some function to test the code whether is working
     * Priority: Medium
     * Due Date: 18 Dec 2023 
+
+
+# Reference code styling
+
+* Imports :According to the (van Rossum, Warsaw and Coghlan, 2001) the should style below as the correct way.
+```
+import sys
+import csv
+```
+
+* Class Names: According to the (van Rossum, Warsaw and Coghlan, 2001)class names should use CapWords convention.
+```
+class Employee:
+```
+
+* String Quotes : String quotes both single and double are the same.(van Rossum, Warsaw and Coghlan, 2001) 
+```
+print("Choose from one of these commands")
+```
+
+* Whitespaces : Avoid extraneous whitespace immediately inside parentheses, brackets.(van Rossum, Warsaw and Coghlan, 2001)
+
+```
+def update_data(filename, update_employee):
+    id = update_employee[0]
+    updateData = update_employee[1:]
+```
+
+
+###reference:
+van Rossum, G., Warsaw, B. and Coghlan, N. (2001). PEP 8 – Style Guide for Python Code | peps.python.org. [online] peps.python.org. Available at: https://peps.python.org/pep-0008/.
