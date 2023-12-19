@@ -1,7 +1,7 @@
 import sys
 import csv
 from datetime import datetime
-from validate import valid_inputs
+from validate import valid_inputs, print_error
 from employee import Employee
 from csv_helper import write_employees_csv, read_employees_csv
 from colored import fg, attr, bg
@@ -15,7 +15,7 @@ def create_employee(filename, employee_data):
 
     for employee in employees:
         if employee.employee_id == id:
-            print("    [ERROR]: The employee id already exist, please input a valid employee id")
+            print_error("The employee id already exist, please input a valid employee id.")
             return False
 
     new_employee = Employee(employee_data[0], employee_data[1], employee_data[2], employee_data[3], employee_data[4], employee_data[5], employee_data[6])
@@ -92,7 +92,7 @@ def update_data(filename, update_employee):
             employee = emp
     
     if  employee == None:
-        print("    [ERROR]: Update employee can not found, please input the correct employee id")
+        print_error("Update employee can not found, please input the correct employee id.")
         return False
     
     for i in range(0, len(updateData), 2):
@@ -127,7 +127,7 @@ def delete_data(filename, delete_employee):
             employee = emp
 
     if  employee == None:
-        print("    [ERROR]: Delete employee can not found, please input the existing employee id to delete")
+        print_error("Delete employee can not found, please input the existing employee id to delete.")
         return False    
     
     print(f"Employee deleted: {employee}")
@@ -141,7 +141,7 @@ def run_app(filename):
     # welcome the user and get input
     print("")
     print("")
-    print(f"{fg('black')}{bg('white')}Welcome to the Employee Directory{attr('reset')}")
+    print("Welcome to the Employee Directory")
     
     while(True):
         print("")
@@ -201,7 +201,7 @@ def run_app(filename):
         elif command == "5":
             return
         else:
-            print("    [ERROR]: Program needs a valid command")
+            print_error("Program needs a valid command.")
             continue
 
         user_inputs = user_inputs.replace("  ", " ")
