@@ -1,7 +1,11 @@
 # THIS IS ESTHER FAITH DENNIS T1A3 
 
-### Git repo
+## Git repo
 [link to git](https://github.com/estherszliu/EstherFaithDennis_T1A3)
+
+## ### Presentation
+[Link to presentation]()
+
 
 # App Usage
 
@@ -181,47 +185,32 @@ It will be implemented with a `def valid_delete_inputs(inputs)` for validate and
 
 Most the task is high priority because delete feature is needed for all other feature to work properly. 
 
-project mangement:
+# Project mangement:
 
-![sceenshort1](image.png)
-![sceenshort2](image-1.png)
-![sceenshort3](image-2.png)
-![delete employee](image-3.png)
+For the project mangement, I have been use Trello. Below are some screenshorts. 
 
-![Doing test file](image-4.png)
+![sceenshort1](./docs/image.png)
+![sceenshort2](./docs/image-1.png)
+![sceenshort3](./docs/image-2.png)
+![delete employee](./docs/image-3.png)
 
-# write a Unittest for the app
-- [ ] Write some function to test the code whether is working
-    * Priority: Medium
-    * Due Date: 18 Dec 2023 
+![Doing test file](./docs/image-4.png)
 
+# write Unittest for the app
 
-# Reference code styling
+* Write unittest test the create feature.
 
-* Imports :According to the (van Rossum, Warsaw and Coghlan, 2001) the should style below as the correct way.
-```
-import sys
-import csv
-```
+* Write unitest test the search feature. 
 
-* Class Names: According to the (van Rossum, Warsaw and Coghlan, 2001)class names should use CapWords convention.
-```
-class Employee:
-```
+# Write help document to show how to use the program
 
-* String Quotes : String quotes both single and double are the same.(van Rossum, Warsaw and Coghlan, 2001) 
-```
-print("Choose from one of these commands")
-```
-
-* Whitespaces : Avoid extraneous whitespace immediately inside parentheses, brackets.(van Rossum, Warsaw and Coghlan, 2001)
-
-```
-def update_data(filename, update_employee):
-    id = update_employee[0]
-    updateData = update_employee[1:]
-```
+* Written in `help_readme.md` in the docs folder.
 
 
-###reference:
-van Rossum, G., Warsaw, B. and Coghlan, N. (2001). PEP 8 – Style Guide for Python Code | peps.python.org. [online] peps.python.org. Available at: https://peps.python.org/pep-0008/.
+# Code Style Guide
+For code styling, I have chosen to usd PEP 8 – Style Guide for Python Code.Here is the link to [link toPEP8](https://peps.python.org/pep-0008/) (Hattori, n.d.) PEP8 helps to organise the code more consistency and help to improve the readerblity. I have been using the autopep8 to auto adjust the code style for me. Here is the link to [link to autopep8](https://pypi.org/project/autopep8/) (Hattori, n.d.) This autopep8 is a auto adjustment of PEP 8, once you download it and excute it, it will change the file style automaticaly.
+
+## Reference
+Hattori, H. (n.d.). autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide. [online] PyPI. Available at: https://pypi.org/project/autopep8/.
+
+Hattori, H. (n.d.). autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide. [online] PyPI. Available at: https://pypi.org/project/autopep8/.
