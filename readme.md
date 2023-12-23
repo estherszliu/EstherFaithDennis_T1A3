@@ -94,7 +94,10 @@ When delete employee, the app asks to enter the employee id to be deleted.
 If the employee id is correct, the app will print a message to the terminal showing the employee that was deleted. 
 
 ### Exit
-If the user choose 5 to exit, the app will no longer be running. Rerun `./run_app.sh` to choose more commands. 
+If the user choose 5 to exit, the app will no longer be running. Rerun `./run_app.sh` to choose more commands.
+
+## More Help
+Also more help can be read in the `docs/help_readme.md` file. 
 
 # Project Planning
 To do the project planning I did these things
