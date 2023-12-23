@@ -316,9 +316,9 @@ I decided to write automated tests for my testing. This made it easy to check if
     * Check if search salary is working
 
 # Code Style Guide
-For code styling, I have chosen to usd PEP 8 – Style Guide for Python Code.Here is the link to [link toPEP8](https://peps.python.org/pep-0008/) (Hattori, n.d.) PEP8 helps to organise the code more consistency and help to improve the readerblity. I have been using the autopep8 to auto adjust the code style for me. Here is the link to [link to autopep8](https://pypi.org/project/autopep8/) (Hattori, n.d.) This autopep8 is a auto adjustment of PEP 8, once you download it and excute it, it will change the file style automaticaly.
+For code styling, I have chosen to usd PEP 8 – Style Guide for Python Code.Here is the link to [link toPEP8](https://peps.python.org/pep-0008/) (peps.python.org, n.d.) PEP8 helps to organise the code more consistency and help to improve the readerblity. I have been using the autopep8 to auto adjust the code style for me. Here is the link to [link to autopep8](https://pypi.org/project/autopep8/) (Hattori, n.d.) This autopep8 is a auto adjustment of PEP 8, once you download it and excute it, it will change the file style automaticaly.
 
 ## Reference
-Hattori, H. (n.d.). autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide. [online] PyPI. Available at: https://pypi.org/project/autopep8/.
+peps.python.org. (n.d.). PEP 8 – Style Guide for Python Code | peps.python.org. [online] Available at: https://peps.python.org/pep-0008/#naming-conventions.
 
 Hattori, H. (n.d.). autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide. [online] PyPI. Available at: https://pypi.org/project/autopep8/.
