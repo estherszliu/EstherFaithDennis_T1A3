@@ -4,7 +4,7 @@
 [link to git](https://github.com/estherszliu/EstherFaithDennis_T1A3)
 
 ## Presentation
-[Link to presentation]()
+[Link to presentation](https://youtu.be/p2Idm8wSP7U)
 
 # App Usage
 ## Dependencies

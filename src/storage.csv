@@ -1,0 +1,6 @@
+employee_id,first_name,last_name,phone_number,job_title,salary,start_date
+100,Esther,Dennis,0455456123,Chef,85000,01/05/22
+101,Gary,Smith,0455456124,Waiter,65000,01/04/22
+102,Sally,Brown,0455456125,Manager,120000,01/06/22
+103,Shuzhen,Liu,0455456126,Barista,55000,07/09/22
+104,Simon,Green,0455456127,Assistant,75000,03/07/23

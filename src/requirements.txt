@@ -1,0 +1,2 @@
+autopep8==2.0.4
+colored==2.2.3
