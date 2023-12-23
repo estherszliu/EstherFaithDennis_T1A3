@@ -172,8 +172,6 @@ class Test_inputs(unittest.TestCase):
         os.remove(test_filename)
         self.assertTrue(result)
 
-    
-
 
 if __name__ == "__main__":
     unittest.main()
